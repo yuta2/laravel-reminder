@@ -32,7 +32,7 @@ class ReminderServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bindShared('reminder', function ($app)
+        $this->app->singleton('reminder', function ($app)
         {
             return new Reminder($app->session, $app->config);
         });
